@@ -15,6 +15,6 @@ class Settings:
     API_WEATHER_KEY: str = os.getenv("MY_WEATHER_API_KEY")
     WEATHER_API_URL: str = os.getenv("WEATHER_API_URL")
 
-    CITIES: list = os.getenv("CITIES_LIST").split(',')
+    CITIES: list = str(os.getenv("CITIES_LIST")).split(',')
 
 settings = Settings()

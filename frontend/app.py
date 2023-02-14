@@ -2,41 +2,45 @@ import folium
 import streamlit as st
 from streamlit_folium import st_folium
 import requests
+import os
 import sys
-sys.path.append('../')
+sys.path.append('/mnt/c/microproject')
 from backend.core.config import settings
-from backend.main import origins
-
-base_url = origins[0]
 
 st.set_page_config(
     page_title="world weather",
     page_icon=":world_map:️",
     layout="wide",
 )
-st.title("🌎 Welcome To The WeatherApp")
-get_started = st.button(label="Start the map")
 
-if "cities" not in st.session_state:
-    st.session_state.cities = []
+st.write(sys.path)
+# base_url = origins[0]
 
-if "cities" not in st.session_state:
-    st.session_state.cities = []
+# sys.path
 
-if "temprtures" not in st.session_state:
-    st.session_state.temprtures = []
+# st.title("🌎 Welcome To The WeatherApp")
+# get_started = st.button(label="Start the map")
 
-if get_started:
-    url = base_url + settings.API_V1_PATH + "/weather"            
-    response_get_map = requests.get(url)
-    data = response_get_map.json()
+# if "cities" not in st.session_state:
+#     st.session_state.cities = []
 
-    if response_get_map.status_code == 200:
-        st.success(response_get_map)
-    else:
-        st.error(response_get_map)
+# if "cities" not in st.session_state:
+#     st.session_state.cities = []
 
-data
+# if "temprtures" not in st.session_state:
+#     st.session_state.temprtures = []
+
+# if get_started:
+#     url = base_url + settings.API_V1_PATH + "/weather"            
+#     response_get_map = requests.get(url)
+#     data = response_get_map.json()
+
+#     if response_get_map.status_code == 200:
+#         st.success(response_get_map)
+#     else:
+#         st.error(response_get_map)
+
+# data
 
 # map = folium.Map(location=[mean_latitude, mean_longitude], zoom_start=2)
 

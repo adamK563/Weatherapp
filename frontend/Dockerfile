@@ -6,7 +6,7 @@ WORKDIR /frontend
 
 RUN apt-get update 
 
-COPY ./requirments.txt /app/requirments.txt
+COPY ./requirments.txt /frontend/requirments.txt
 
 RUN pip install -r requirments.txt
 
