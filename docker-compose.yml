@@ -1,0 +1,17 @@
+version: '3'
+services:
+  frontend:
+    container_name: weather_frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports: 
+      - "8501:8501"
+
+  backend:
+    container_name: weather_backend
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    ports: 
+      - "8000:8000"
